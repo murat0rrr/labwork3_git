@@ -28,6 +28,17 @@ void buildHeap(std::vector<int> vals[], std::vector<int> index[], int n) {
         siftDown(vals, index, i, n);
     }
 }
+void siftUp (std::vector<int> vals[], std::vector<int> index[]) {
+    int i = vals->size();
+    while (vals[i] < vals[(i - 1) / 2]) {
+        std::swap(vals[i], vals[(i - 1) / 2]);
+    }
+}
+void buildHeap(std::vector<int> vals[], std::vector<int> index[], int n) {
+    for (int i = n / 2; i >= 0; i--) {
+        siftDown(vals, index, i, n);
+    }
+}
 
 void push(std::vector<int> val[], std::vector<int> index[], int x) {
 
